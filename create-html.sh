@@ -5,10 +5,6 @@ tags=$(echo "$data" | grep "property=\"og:")
 title=$(echo "$data" | grep "<title>")
 mkdir dist
 touch dist/index.html
-echo "running ls -a"
-ls -a
-echo "running ls -a ."
-ls -a .
 cat << EOF > dist/index.html
 <!DOCTYPE html>
 <html>
