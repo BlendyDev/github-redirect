@@ -1,0 +1,23 @@
+name: Open Graph Metadata
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" #every five minutes
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate HTML
+        run: bash create-html.sh
+
+      - name: Deploy 
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+      
