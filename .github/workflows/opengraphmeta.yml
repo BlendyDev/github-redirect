@@ -2,7 +2,7 @@ name: Open Graph Metadata
 
 on:
   schedule:
-    - cron: "*/5 * * * *" #every five minutes
+    - cron: "* */1 * * *" #every five minutes
   workflow_dispatch:
 
 jobs:
