@@ -3,6 +3,7 @@ URL="https://github.com/BlendyDev"
 data=$(curl -s "$URL")
 tags=$(echo "$data" | grep "property=\"og:")
 title=$(echo "$data" | grep "<title>")
+mkdir dist
 cat << EOF > dist/index.html
 <!DOCTYPE html>
 <html>
