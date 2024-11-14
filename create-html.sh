@@ -5,6 +5,7 @@ tags=$(echo "$data" | grep "property=\"og:")
 title=$(echo "$data" | grep "<title>")
 mkdir dist
 touch dist/index.html
+cp background.png dist
 cat << EOF > dist/index.html
 <!DOCTYPE html>
 <html>
@@ -15,8 +16,7 @@ cat << EOF > dist/index.html
     <meta http-equiv="refresh" content="0;url=https://github.com/blendydev" />
     <link rel="canonical" href="$URL" />
   </head>
-  <body>
-    <p>redirecting...</p>
+  <body style="background-image: url('./background.png');">
   </body>
 </html>
 EOF
